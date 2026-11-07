@@ -1,0 +1,76 @@
+# ==========================================
+# 1. Assignment Brief & Coursework Exam Papers
+# ==========================================
+*.docx
+*.doc
+*.pdf
+6001CMD_GroupProject*
+
+# ==========================================
+# 2. Python & System Cache / Compiled Files
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# ==========================================
+# 3. Virtual Environments & Local Package Dirs
+# ==========================================
+venv/
+env/
+ENV/
+.env
+.venv/
+bin/
+lib/
+include/
+
+# ==========================================
+# 4. Jupyter Notebook Internal Checkpoints
+# ==========================================
+.ipynb_checkpoints*/
+*/.ipynb_checkpoints*/
+
+# ==========================================
+# 5. IDE / Editor Configurations (Local Only)
+# ==========================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ==========================================
+# 6. Large Machine Learning Models & Binaries (Trained weights)
+# ==========================================
+*.pkl
+*.joblib
+*.h5
+*.model
+*.bin
+
+# ==========================================
+# 7. OS Generated Junk Files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# 8. Temporary Logs & Run Artifacts
+# ==========================================
+*.log
+scratch/
+tmp/
+
+# ==========================================
+# 9. Legacy / Local Draft Files (Keep in local only)
+# ==========================================
+src/
+main_pipeline.py
+6001CMD_Telco_Churn_GroupProject.ipynb
