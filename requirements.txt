@@ -1,7 +1,10 @@
-numpy
-pandas
-scikit-learn
-matplotlib
-seaborn
-imbalanced-learn
-jupyter
+# Pinned for Group 13 so everyone gets identical results (Python 3.11-3.14).
+# scikit-learn stays on 1.7.x: 1.8 deprecated LogisticRegression(penalty=...),
+# which our LR grid uses.
+numpy==2.3.4
+pandas==2.3.3
+scikit-learn==1.7.2
+imbalanced-learn==0.14.0
+matplotlib==3.10.7
+seaborn==0.13.2
+jupyter==1.1.1
