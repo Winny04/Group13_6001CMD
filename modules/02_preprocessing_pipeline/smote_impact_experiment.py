@@ -1,19 +1,3 @@
-"""
-Part C - SMOTE impact experiment (Plan v2.1, Part C "Impact evidence").
-
-Same model, same 5-fold stratified CV, four ways of handling class imbalance:
-    none      : no resampling, no weighting (the "do nothing" reference)
-    smote     : StandardScaler -> SMOTE -> model   (project default)
-    balanced  : no resampling, class_weight="balanced"
-    smotenc   : StandardScaler -> SMOTENC -> model (binary / one-hot columns
-                treated as categorical, so no fractional values are created)
-
-Run from the repo root:
-    python modules/02_preprocessing_pipeline/smote_impact_experiment.py
-
-Uses the TRAINING set only (CV). The test set is never touched here.
-Writes results/smote_impact.json.
-"""
 import sys, pathlib  # put the repo root on the import path
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 
