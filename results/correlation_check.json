@@ -1,0 +1,90 @@
+{
+  "pearson_matrix": {
+    "tenure": {
+      "tenure": 1.0,
+      "MonthlyCharges": 0.2509,
+      "TotalCharges": 0.8293,
+      "AvgMonthlyCharge": 0.2493,
+      "TotalServices": 0.4781
+    },
+    "MonthlyCharges": {
+      "tenure": 0.2509,
+      "MonthlyCharges": 1.0,
+      "TotalCharges": 0.6514,
+      "AvgMonthlyCharge": 0.9961,
+      "TotalServices": 0.8513
+    },
+    "TotalCharges": {
+      "tenure": 0.8293,
+      "MonthlyCharges": 0.6514,
+      "TotalCharges": 1.0,
+      "AvgMonthlyCharge": 0.6503,
+      "TotalServices": 0.7772
+    },
+    "AvgMonthlyCharge": {
+      "tenure": 0.2493,
+      "MonthlyCharges": 0.9961,
+      "TotalCharges": 0.6503,
+      "AvgMonthlyCharge": 1.0,
+      "TotalServices": 0.8487
+    },
+    "TotalServices": {
+      "tenure": 0.4781,
+      "MonthlyCharges": 0.8513,
+      "TotalCharges": 0.7772,
+      "AvgMonthlyCharge": 0.8487,
+      "TotalServices": 1.0
+    }
+  },
+  "key_pairs": {
+    "AvgMonthlyCharge vs MonthlyCharges": {
+      "pearson": 0.9961148877464288,
+      "spearman": 0.9915336762308302
+    },
+    "TotalCharges vs tenure": {
+      "pearson": 0.8293301214009424,
+      "spearman": 0.8911449219628335
+    },
+    "TotalServices vs MonthlyCharges": {
+      "pearson": 0.8512997822088565,
+      "spearman": 0.8508273427488342
+    }
+  },
+  "corr_with_churn": {
+    "tenure": -0.3445,
+    "MonthlyCharges": 0.2042,
+    "TotalCharges": -0.1889,
+    "AvgMonthlyCharge": 0.2032,
+    "TotalServices": -0.0085
+  },
+  "ablation_avg_monthly_charge": {
+    "logistic_regression | with AvgMonthlyCharge": {
+      "f1": 0.6296968329596028,
+      "roc_auc": 0.8451936727099149,
+      "recall": 0.7952861952861954,
+      "precision": 0.5212971939057951,
+      "accuracy": 0.7528461828541368
+    },
+    "random_forest_tuned | with AvgMonthlyCharge": {
+      "f1": 0.6378882627085436,
+      "roc_auc": 0.84578597522155,
+      "recall": 0.7393939393939395,
+      "precision": 0.5610815680172373,
+      "accuracy": 0.7779544813555455
+    },
+    "logistic_regression | without AvgMonthlyCharge": {
+      "f1": 0.6303528521051103,
+      "roc_auc": 0.8453819621241176,
+      "recall": 0.7973063973063973,
+      "precision": 0.5213367410150509,
+      "accuracy": 0.7528468166420017
+    },
+    "random_forest_tuned | without AvgMonthlyCharge": {
+      "f1": 0.6315594011635213,
+      "roc_auc": 0.8460062064667232,
+      "recall": 0.7367003367003366,
+      "precision": 0.5528109124263036,
+      "accuracy": 0.7727905362796018
+    }
+  }
+}
