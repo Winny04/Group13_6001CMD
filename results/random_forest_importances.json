@@ -1,0 +1,102 @@
+[
+  {
+    "feature": "tenure",
+    "importance": 0.14908658594797453
+  },
+  {
+    "feature": "PaymentMethod_Electronic check",
+    "importance": 0.11285812737546982
+  },
+  {
+    "feature": "Contract_Two year",
+    "importance": 0.10935802925042411
+  },
+  {
+    "feature": "TotalCharges",
+    "importance": 0.10186069504411985
+  },
+  {
+    "feature": "InternetService_Fiber optic",
+    "importance": 0.0997621701062427
+  },
+  {
+    "feature": "AvgMonthlyCharge",
+    "importance": 0.06141401032329019
+  },
+  {
+    "feature": "MonthlyCharges",
+    "importance": 0.05824252692071153
+  },
+  {
+    "feature": "Contract_One year",
+    "importance": 0.0481003990994076
+  },
+  {
+    "feature": "OnlineSecurity",
+    "importance": 0.038054731283954146
+  },
+  {
+    "feature": "PaperlessBilling",
+    "importance": 0.03335423574841999
+  },
+  {
+    "feature": "InternetService_No",
+    "importance": 0.03134983598623232
+  },
+  {
+    "feature": "TechSupport",
+    "importance": 0.02619308064279583
+  },
+  {
+    "feature": "TotalServices",
+    "importance": 0.022683995903477604
+  },
+  {
+    "feature": "Dependents",
+    "importance": 0.019850533869226576
+  },
+  {
+    "feature": "Partner",
+    "importance": 0.013120108325276013
+  },
+  {
+    "feature": "OnlineBackup",
+    "importance": 0.012067202935984055
+  },
+  {
+    "feature": "MultipleLines",
+    "importance": 0.011262193262537138
+  },
+  {
+    "feature": "SeniorCitizen",
+    "importance": 0.009694747709017583
+  },
+  {
+    "feature": "PaymentMethod_Mailed check",
+    "importance": 0.006425202192818524
+  },
+  {
+    "feature": "PaymentMethod_Credit card (automatic)",
+    "importance": 0.006183162977972238
+  },
+  {
+    "feature": "StreamingTV",
+    "importance": 0.0061080933042910925
+  },
+  {
+    "feature": "StreamingMovies",
+    "importance": 0.005999255629420173
+  },
+  {
+    "feature": "gender",
+    "importance": 0.005811497240884115
+  },
+  {
+    "feature": "PhoneService",
+    "importance": 0.0057827206551683994
+  },
+  {
+    "feature": "DeviceProtection",
+    "importance": 0.005376858264884005
+  }
+]
