@@ -39,6 +39,24 @@ def main():
     dups = df.drop(columns=["customerID"]).duplicated().sum()
     print(f"\n[Duplicates Check] Duplicate records when excluding customerID: {dups} rows")
 
+    # 4b. IQR Outlier Check (Global and by Churn)
+    num_cols = ["tenure", "MonthlyCharges", "TotalCharges_num"]
+    print("\n--- IQR Outlier Check ---")
+    for col in num_cols:
+        s = df[col].dropna()
+        q1, q3 = s.quantile(0.25), s.quantile(0.75)
+        iqr = q3 - q1
+        lower, upper = q1 - 1.5 * iqr, q3 + 1.5 * iqr
+        global_out = ((s < lower) | (s > upper)).sum()
+        churn_out = {}
+        for grp in ["No", "Yes"]:
+            sg = df.loc[df["Churn"] == grp, col].dropna()
+            gq1, gq3 = sg.quantile(0.25), sg.quantile(0.75)
+            giqr = gq3 - gq1
+            g_out = ((sg < gq1 - 1.5 * giqr) | (sg > gq3 + 1.5 * giqr)).sum()
+            churn_out[grp] = int(g_out)
+        print(f"{col}: global={int(global_out)}, No={churn_out['No']}, Yes={churn_out['Yes']}")
+
     # 5. Descriptive statistics and skewness
     print("\n--- Descriptive Statistics for Numeric Features ---")
     num_cols = ["tenure", "MonthlyCharges", "TotalCharges_num"]
@@ -58,7 +76,7 @@ def main():
     # Figure 1: Target Churn distribution (Class Imbalance)
     plt.figure(figsize=(6, 4))
     ax = sns.countplot(data=df, x="Churn", hue="Churn", palette=["#2b5c8f", "#d95f02"], legend=False)
-    plt.title("Figure 1: Target Churn Distribution (Class Imbalance)", fontsize=11, fontweight="bold")
+    plt.title("Target Churn Distribution (Class Imbalance)", fontsize=11, fontweight="bold")
     for p in ax.patches:
         ax.annotate(
             f"{int(p.get_height())} ({p.get_height()/len(df)*100:.1f}%)",
@@ -97,7 +115,7 @@ def main():
     plt.figure(figsize=(7, 5))
     corr = df[["tenure", "MonthlyCharges", "TotalCharges_num", "Churn_num"]].corr()
     sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5, cbar=True)
-    plt.title("Figure 3: Pearson Correlation Heatmap", fontsize=11, fontweight="bold")
+    plt.title("Pearson Correlation Heatmap", fontsize=11, fontweight="bold")
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "fig3_correlation_heatmap.png"), dpi=300)
     plt.close()
@@ -113,7 +131,32 @@ def main():
     plt.savefig(os.path.join(output_dir, "fig4_categorical_churn_drivers.png"), dpi=300)
     plt.close()
 
-    print(f"\n[SUCCESS] All 4 high-resolution EDA figures saved to: {output_dir}")
+    # Figure 5: Churn rate by tenure bands
+    df["tenure_band"] = pd.cut(
+        df["tenure"],
+        bins=[-1, 12, 24, 48, 72],
+        labels=["0-12m", "13-24m", "25-48m", "49-72m"],
+    )
+    tenure_churn = df.groupby("tenure_band", observed=False)["Churn_num"].mean() * 100
+    plt.figure(figsize=(7, 4.5))
+    ax = sns.barplot(x=tenure_churn.index, y=tenure_churn.values, palette="Blues_r", hue=tenure_churn.index, legend=False)
+    plt.title("Churn Rate by Tenure Band", fontsize=11, fontweight="bold")
+    plt.xlabel("Tenure Band (Months)")
+    plt.ylabel("Churn Rate (%)")
+    plt.ylim(0, max(tenure_churn.values) * 1.15)
+    for p in ax.patches:
+        ax.annotate(
+            f"{p.get_height():.1f}%",
+            (p.get_x() + p.get_width() / 2.0, p.get_height()),
+            ha="center",
+            va="bottom",
+            fontsize=9,
+        )
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "fig5_churn_by_tenure_bands.png"), dpi=300)
+    plt.close()
+
+    print(f"\n[SUCCESS] All 5 high-resolution EDA figures saved to: {output_dir}")
 
 
 if __name__ == "__main__":
