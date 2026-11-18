@@ -1,102 +1,102 @@
 [
   {
     "feature": "tenure",
-    "importance": 0.14908658594797453
+    "importance": 0.14955519539193587
   },
   {
     "feature": "PaymentMethod_Electronic check",
-    "importance": 0.11285812737546982
+    "importance": 0.11187883307004219
   },
   {
     "feature": "Contract_Two year",
-    "importance": 0.10935802925042411
+    "importance": 0.10923793958905635
   },
   {
     "feature": "TotalCharges",
-    "importance": 0.10186069504411985
+    "importance": 0.10113439528474973
   },
   {
     "feature": "InternetService_Fiber optic",
-    "importance": 0.0997621701062427
+    "importance": 0.09917404747777503
   },
   {
     "feature": "AvgMonthlyCharge",
-    "importance": 0.06141401032329019
+    "importance": 0.061843038184249154
   },
   {
     "feature": "MonthlyCharges",
-    "importance": 0.05824252692071153
+    "importance": 0.05878058249054434
   },
   {
     "feature": "Contract_One year",
-    "importance": 0.0481003990994076
+    "importance": 0.047390744052489595
   },
   {
     "feature": "OnlineSecurity",
-    "importance": 0.038054731283954146
+    "importance": 0.03902810196672796
   },
   {
     "feature": "PaperlessBilling",
-    "importance": 0.03335423574841999
+    "importance": 0.033924240754681145
   },
   {
     "feature": "InternetService_No",
-    "importance": 0.03134983598623232
+    "importance": 0.03147513149843305
   },
   {
     "feature": "TechSupport",
-    "importance": 0.02619308064279583
+    "importance": 0.026454413735554568
   },
   {
     "feature": "TotalServices",
-    "importance": 0.022683995903477604
+    "importance": 0.02299111533032545
   },
   {
     "feature": "Dependents",
-    "importance": 0.019850533869226576
+    "importance": 0.019666954447942125
   },
   {
     "feature": "Partner",
-    "importance": 0.013120108325276013
+    "importance": 0.01301810108245142
   },
   {
     "feature": "OnlineBackup",
-    "importance": 0.012067202935984055
+    "importance": 0.011845135577749898
   },
   {
     "feature": "MultipleLines",
-    "importance": 0.011262193262537138
+    "importance": 0.010977424819315573
   },
   {
     "feature": "SeniorCitizen",
-    "importance": 0.009694747709017583
-  },
-  {
-    "feature": "PaymentMethod_Mailed check",
-    "importance": 0.006425202192818524
+    "importance": 0.009583164566777871
   },
   {
     "feature": "PaymentMethod_Credit card (automatic)",
-    "importance": 0.006183162977972238
+    "importance": 0.00624911959680964
+  },
+  {
+    "feature": "PaymentMethod_Mailed check",
+    "importance": 0.006227438313528857
   },
   {
     "feature": "StreamingTV",
-    "importance": 0.0061080933042910925
+    "importance": 0.006208835864933733
   },
   {
     "feature": "StreamingMovies",
-    "importance": 0.005999255629420173
+    "importance": 0.00620458673630138
   },
   {
     "feature": "gender",
-    "importance": 0.005811497240884115
+    "importance": 0.005917495213915074
   },
   {
     "feature": "PhoneService",
-    "importance": 0.0057827206551683994
+    "importance": 0.005860338899058359
   },
   {
     "feature": "DeviceProtection",
-    "importance": 0.005376858264884005
+    "importance": 0.005373626054651481
   }
 ]
